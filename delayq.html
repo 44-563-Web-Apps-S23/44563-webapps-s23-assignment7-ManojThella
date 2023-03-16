@@ -31,11 +31,14 @@
 		  <div class="delayQ">row item 2</div>  
 		  <div class="delayQ">row item 3</div>  
 		</div><br>
-        
+
         <input type="text" id="add value"><br>
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
 		<button onclick="makeNewDiv()">Add value</button>
+        <button onclick="get()">Get</button>
+        <button onclick="delay()">Delay</button>
+
 	
 	
 </body>
@@ -52,5 +55,24 @@
 		container.appendChild(element)
 		
 	}
+
+    function get(){
+        var queueItems=document.getElementsByClassName("delayQ");
+        if(queueItems.length>0){
+            queueItems[0].remove();
+        }
+        
+    }
+
+    function delay(){
+        var queueItems = document.getElementsByClassName("delayQ");
+        if(queueItems.length>0){
+            var removedItem= queueItems[0];
+            queueItems[0].remove();
+            let container = document.getElementById('target')
+		    container.appendChild(removedItem)
+
+        }
+    }
 </script>
 </html>	
