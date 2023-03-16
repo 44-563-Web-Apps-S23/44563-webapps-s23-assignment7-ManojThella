@@ -28,6 +28,26 @@
             console.log(reactTime);
         }
 
+        function startTime(){
+      
+      for(let i=0;i<9;i++){
+        setTimeout(()=>{
+          document.getElementById("counter").innerHTML = i
+        },((8-i)*1000))
+      }
+      setTimeout(()=>{
+        if(reactTime==undefined){
+          document.getElementById("target").innerHTML="Too Slow";
+        }
+        else{
+          let endTime=Date.now(),
+          elapsed_time=endTime-reactTime;
+          document.getElementById("target").innerHTML="Time was "+elapsed_time;
+        }
+      
+      },(8000))
+    }
+
     </script>
 
 </body>
